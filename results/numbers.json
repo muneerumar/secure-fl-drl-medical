@@ -1,0 +1,877 @@
+{
+  "scalars": {
+    "missing_class_clients_a05": 4,
+    "min_samples": 574,
+    "max_samples": 2711,
+    "mean_samples": "1,196",
+    "std_samples": "672",
+    "n_classes": 8,
+    "missing_class_clients_a01": 9,
+    "num_params": "422,056",
+    "dense_MB": "1.69",
+    "uplink_per_client_MB": "0.185",
+    "compression_ratio": "9.14",
+    "uplink_reduction_pct": "89.1",
+    "main_sigma": "1.5",
+    "acc_CL": "0.9246 \u00b1 0.0034",
+    "auc_CL": "0.9933",
+    "acc_FL-DRL": "0.9094 \u00b1 0.0022",
+    "auc_FL-DRL": "0.9909",
+    "acc_FedAvg": "0.8900 \u00b1 0.0075",
+    "auc_FedAvg": "0.9862",
+    "acc_FedProx": "0.9103 \u00b1 0.0023",
+    "auc_FedProx": "0.9909",
+    "acc_RandomSub": "0.9122 \u00b1 0.0030",
+    "auc_RandomSub": "0.9910",
+    "mean_round_s": "45.2",
+    "total_train_min": "75",
+    "uplink_per_round_MB": "1.23",
+    "total_uplink_MB": "123.3",
+    "n_seeds_main": 5,
+    "delong_fldrl_cl_diff": "-0.0026 (mean over 8 one-vs-rest curves)",
+    "delong_fldrl_cl_p": "0.000354 (Bonferroni-corrected smallest of 8 per-class tests)",
+    "delong_fldrl_cl_ci": "per-class intervals in significance.json",
+    "delong_fldrl_cl_verdict": "statistically significant",
+    "delong_fldrl_fedavg_diff": "+0.0034 (mean over 8 one-vs-rest curves)",
+    "delong_fldrl_fedavg_p": "0.00948 (Bonferroni-corrected smallest of 8 per-class tests)",
+    "delong_fldrl_fedavg_ci": "per-class intervals in significance.json",
+    "ttest_fldrl_fedavg": "+0.0194 (t = 6.18, p = 0.00348, n = 5 seeds)",
+    "ttest_fldrl_randomsub": "-0.0028 (t = -1.81, p = 0.145, n = 5 seeds)",
+    "ttest_fldrl_fedprox": "-0.0009 (t = -0.78, p = 0.478, n = 5 seeds)",
+    "reward_val_lo": "0.8954",
+    "reward_val_hi": "0.9001",
+    "reward_uplink_lo": "1.016",
+    "reward_uplink_hi": "1.191",
+    "reward_beta": "0.2",
+    "reward_gamma": "0.01",
+    "nodp_accuracy": "0.8739",
+    "dp_accuracy_span": "0.583 to 0.706",
+    "dp_auc_span": "0.883 to 0.940"
+  },
+  "tables": {
+    "table12_partition_detail": {
+      "header": [
+        "Hospital",
+        "Samples",
+        "Classes present",
+        "Class distribution"
+      ],
+      "rows": [
+        [
+          0,
+          1214,
+          8,
+          "139 / 2 / 489 / 2 / 301 / 15 / 5 / 261"
+        ],
+        [
+          1,
+          1016,
+          8,
+          "76 / 398 / 177 / 16 / 34 / 22 / 3 / 290"
+        ],
+        [
+          2,
+          574,
+          7,
+          "358 / 0 / 24 / 66 / 15 / 1 / 33 / 77"
+        ],
+        [
+          3,
+          763,
+          7,
+          "13 / 139 / 0 / 112 / 10 / 144 / 344 / 1"
+        ],
+        [
+          4,
+          2217,
+          7,
+          "85 / 833 / 72 / 70 / 0 / 211 / 740 / 206"
+        ],
+        [
+          5,
+          2711,
+          8,
+          "77 / 232 / 89 / 1559 / 86 / 265 / 118 / 285"
+        ],
+        [
+          6,
+          1058,
+          8,
+          "32 / 15 / 1 / 14 / 82 / 4 / 904 / 6"
+        ],
+        [
+          7,
+          1026,
+          7,
+          "25 / 279 / 201 / 0 / 1 / 223 / 4 / 293"
+        ],
+        [
+          8,
+          750,
+          8,
+          "28 / 64 / 31 / 164 / 255 / 2 / 172 / 34"
+        ],
+        [
+          9,
+          630,
+          8,
+          "19 / 219 / 1 / 23 / 65 / 106 / 7 / 190"
+        ]
+      ]
+    },
+    "table3_parameters": {
+      "header": [
+        "Parameter",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Device",
+          "MacBook Pro M3"
+        ],
+        [
+          "Processor",
+          "Apple M3"
+        ],
+        [
+          "Memory (RAM)",
+          "16 GB"
+        ],
+        [
+          "Number of clients (hospitals)",
+          "10"
+        ],
+        [
+          "Primary dataset",
+          "BloodMNIST (8 classes, 11,959 training images)"
+        ],
+        [
+          "Secondary dataset",
+          "PneumoniaMNIST (2 classes, 4,708 training images)"
+        ],
+        [
+          "Partition",
+          "Dirichlet, alpha = 0.5"
+        ],
+        [
+          "Model at clients",
+          "CNN (Conv-GroupNorm-ReLU-Pool x2, FC)"
+        ],
+        [
+          "Model at server",
+          "DQN (128 x 128 MLP, 3 actions, mode=selection_only)"
+        ],
+        [
+          "Local epochs per round",
+          "5"
+        ],
+        [
+          "Communication rounds",
+          "100"
+        ],
+        [
+          "Batch size",
+          "32"
+        ],
+        [
+          "Learning rate (FL)",
+          "0.001"
+        ],
+        [
+          "Learning rate (DRL)",
+          "0.0001"
+        ],
+        [
+          "Optimizer",
+          "Adam"
+        ],
+        [
+          "Privacy mechanism",
+          "DP-SGD (per-sample clipping + Gaussian noise)"
+        ],
+        [
+          "Clipping norm C",
+          "1.0"
+        ],
+        [
+          "Noise multiplier sigma",
+          "1.5"
+        ],
+        [
+          "Privacy accounting",
+          "Renyi DP, delta = 1e-5"
+        ],
+        [
+          "Local objective",
+          "FedProx (mu=0.01)"
+        ],
+        [
+          "Aggregation method",
+          "sample-weighted mean (FedAvg rule)"
+        ],
+        [
+          "Client selection",
+          "DQN-selected, top-k direction=highest_loss"
+        ],
+        [
+          "Compression",
+          "top-10% sparsification, 16-bit values"
+        ],
+        [
+          "Attack simulations",
+          "FGSM, PGD, sign-flip and label-flip poisoning"
+        ],
+        [
+          "Reward weights",
+          "alpha=1.0, beta=0.01, gamma=0.01 (costs normalised to [0,1])"
+        ],
+        [
+          "Seeds",
+          "5 (main comparison), 3 (secondary studies)"
+        ]
+      ]
+    },
+    "table7_performance": {
+      "header": [
+        "Model",
+        "Accuracy",
+        "Macro precision",
+        "Macro recall",
+        "Macro F1",
+        "AUC",
+        "Seeds"
+      ],
+      "rows": [
+        [
+          "CL",
+          "0.9246 \u00b1 0.0034",
+          "0.9160 \u00b1 0.0059",
+          "0.9087 \u00b1 0.0040",
+          "0.9114 \u00b1 0.0038",
+          "0.9933 \u00b1 0.0003",
+          5
+        ],
+        [
+          "FedAvg",
+          "0.8900 \u00b1 0.0075",
+          "0.8776 \u00b1 0.0115",
+          "0.8699 \u00b1 0.0070",
+          "0.8692 \u00b1 0.0088",
+          "0.9862 \u00b1 0.0018",
+          5
+        ],
+        [
+          "FedProx",
+          "0.9103 \u00b1 0.0023",
+          "0.8984 \u00b1 0.0047",
+          "0.8901 \u00b1 0.0048",
+          "0.8929 \u00b1 0.0030",
+          "0.9909 \u00b1 0.0002",
+          5
+        ],
+        [
+          "RandomSub",
+          "0.9122 \u00b1 0.0030",
+          "0.9002 \u00b1 0.0050",
+          "0.8945 \u00b1 0.0030",
+          "0.8966 \u00b1 0.0027",
+          "0.9910 \u00b1 0.0003",
+          5
+        ],
+        [
+          "FL-DRL",
+          "0.9094 \u00b1 0.0022",
+          "0.8974 \u00b1 0.0042",
+          "0.8892 \u00b1 0.0049",
+          "0.8919 \u00b1 0.0032",
+          "0.9909 \u00b1 0.0002",
+          5
+        ]
+      ]
+    },
+    "table8_efficiency": {
+      "header": [
+        "Model",
+        "Convergence round",
+        "Uplink per round (MB)",
+        "Total payload (MB, up+down)",
+        "Compression ratio",
+        "Uplink reduction (%)",
+        "Inference (ms/sample)",
+        "Wall-clock per round (s)"
+      ],
+      "rows": [
+        [
+          "CL",
+          "36.6 \u00b1 3.8",
+          "n/a (raw data upload)",
+          "112.5 \u00b1 0.0",
+          "n/a",
+          "n/a",
+          "0.1218 \u00b1 0.0061",
+          "9.6 \u00b1 0.1"
+        ],
+        [
+          "FedAvg",
+          "70.4 \u00b1 15.3",
+          "1.847 \u00b1 0.000",
+          "1872.9 \u00b1 0.0",
+          "9.14 \u00b1 0.00",
+          "89.1 \u00b1 0.0",
+          "0.1546 \u00b1 0.0324",
+          "39.6 \u00b1 6.8"
+        ],
+        [
+          "FedProx",
+          "35.2 \u00b1 5.3",
+          "1.847 \u00b1 0.000",
+          "1872.9 \u00b1 0.0",
+          "9.14 \u00b1 0.00",
+          "89.1 \u00b1 0.0",
+          "0.2106 \u00b1 0.0270",
+          "64.8 \u00b1 4.6"
+        ],
+        [
+          "RandomSub",
+          "42.0 \u00b1 8.4",
+          "1.293 \u00b1 0.000",
+          "1311.0 \u00b1 0.0",
+          "9.14 \u00b1 0.00",
+          "89.1 \u00b1 0.0",
+          "0.1775 \u00b1 0.0055",
+          "42.9 \u00b1 0.6"
+        ],
+        [
+          "FL-DRL",
+          "38.4 \u00b1 6.7",
+          "1.233 \u00b1 0.165",
+          "1251.1 \u00b1 167.7",
+          "9.14 \u00b1 0.00",
+          "89.1 \u00b1 0.0",
+          "0.1903 \u00b1 0.0245",
+          "45.2 \u00b1 5.9"
+        ]
+      ]
+    },
+    "table11_evasion": {
+      "header": [
+        "Model",
+        "Clean",
+        "FGSM \u03b5=0.01",
+        "FGSM \u03b5=0.03",
+        "FGSM \u03b5=0.05",
+        "FGSM \u03b5=0.1",
+        "PGD \u03b5=0.03",
+        "PGD \u03b5=0.05"
+      ],
+      "rows": [
+        [
+          "CL",
+          "0.9246 \u00b1 0.0034",
+          "0.8753 \u00b1 0.0021",
+          "0.7536 \u00b1 0.0035",
+          "0.6561 \u00b1 0.0088",
+          "0.4562 \u00b1 0.0166",
+          "0.7074 \u00b1 0.0044",
+          "0.5473 \u00b1 0.0134"
+        ],
+        [
+          "FedAvg",
+          "0.8900 \u00b1 0.0075",
+          "0.8326 \u00b1 0.0091",
+          "0.7128 \u00b1 0.0144",
+          "0.6105 \u00b1 0.0196",
+          "0.4098 \u00b1 0.0265",
+          "0.6755 \u00b1 0.0143",
+          "0.5208 \u00b1 0.0181"
+        ],
+        [
+          "FedProx",
+          "0.9103 \u00b1 0.0023",
+          "0.8593 \u00b1 0.0039",
+          "0.7380 \u00b1 0.0077",
+          "0.6262 \u00b1 0.0122",
+          "0.3916 \u00b1 0.0068",
+          "0.7058 \u00b1 0.0115",
+          "0.5494 \u00b1 0.0106"
+        ],
+        [
+          "RandomSub",
+          "0.9122 \u00b1 0.0030",
+          "0.8588 \u00b1 0.0021",
+          "0.7320 \u00b1 0.0043",
+          "0.6208 \u00b1 0.0048",
+          "0.3914 \u00b1 0.0096",
+          "0.6987 \u00b1 0.0039",
+          "0.5383 \u00b1 0.0057"
+        ],
+        [
+          "FL-DRL",
+          "0.9094 \u00b1 0.0022",
+          "0.8581 \u00b1 0.0040",
+          "0.7342 \u00b1 0.0058",
+          "0.6229 \u00b1 0.0067",
+          "0.3850 \u00b1 0.0120",
+          "0.6994 \u00b1 0.0060",
+          "0.5404 \u00b1 0.0079"
+        ]
+      ]
+    },
+    "table_reward_grid": {
+      "header": [
+        "beta",
+        "gamma",
+        "Best validation accuracy",
+        "Test accuracy",
+        "Macro F1",
+        "Uplink (MB/round)"
+      ],
+      "rows": [
+        [
+          0.2,
+          0.01,
+          "0.9001",
+          "0.8930",
+          "0.8715",
+          "1.191"
+        ],
+        [
+          0.2,
+          0.05,
+          "0.9001",
+          "0.8930",
+          "0.8715",
+          "1.191"
+        ],
+        [
+          0.05,
+          0.05,
+          "0.8995",
+          "0.8854",
+          "0.8639",
+          "1.145"
+        ],
+        [
+          0.05,
+          0.01,
+          "0.8989",
+          "0.8866",
+          "0.8631",
+          "1.145"
+        ],
+        [
+          0.01,
+          0.05,
+          "0.8972",
+          "0.8880",
+          "0.8657",
+          "1.016"
+        ],
+        [
+          0.05,
+          0.2,
+          "0.8972",
+          "0.8875",
+          "0.8649",
+          "1.145"
+        ],
+        [
+          0.01,
+          0.01,
+          "0.8960",
+          "0.8860",
+          "0.8632",
+          "1.016"
+        ],
+        [
+          0.01,
+          0.2,
+          "0.8960",
+          "0.8866",
+          "0.8633",
+          "1.016"
+        ],
+        [
+          0.2,
+          0.2,
+          "0.8954",
+          "0.8880",
+          "0.8651",
+          "1.126"
+        ]
+      ]
+    },
+    "table6_privacy": {
+      "header": [
+        "Noise multiplier \u03c3",
+        "Accounted \u03b5 (worst client)",
+        "Accounted \u03b5 (median client)",
+        "Accuracy",
+        "Macro F1",
+        "AUC"
+      ],
+      "rows": [
+        [
+          "0.6",
+          "70.1 \u00b1 7.1",
+          "45.4 \u00b1 1.9",
+          "0.7055 \u00b1 0.0205",
+          "0.6201 \u00b1 0.0503",
+          "0.9397 \u00b1 0.0051"
+        ],
+        [
+          "0.8",
+          "34.5 \u00b1 4.1",
+          "21.0 \u00b1 1.0",
+          "0.6750 \u00b1 0.0075",
+          "0.5624 \u00b1 0.0136",
+          "0.9216 \u00b1 0.0190"
+        ],
+        [
+          "1.0",
+          "21.5 \u00b1 2.7",
+          "12.9 \u00b1 0.6",
+          "0.6658 \u00b1 0.0078",
+          "0.5326 \u00b1 0.0044",
+          "0.9211 \u00b1 0.0097"
+        ],
+        [
+          "1.5",
+          "10.7 \u00b1 1.4",
+          "6.5 \u00b1 0.3",
+          "0.6187 \u00b1 0.0098",
+          "0.4681 \u00b1 0.0113",
+          "0.8972 \u00b1 0.0308"
+        ],
+        [
+          "2.0",
+          "7.1 \u00b1 0.9",
+          "4.4 \u00b1 0.2",
+          "0.5830 \u00b1 0.0156",
+          "0.4011 \u00b1 0.0420",
+          "0.8830 \u00b1 0.0192"
+        ],
+        [
+          "0 (disabled)",
+          "\u221e (no DP)",
+          "\u221e (no DP)",
+          "0.8739 \u00b1 0.0044",
+          "0.8498 \u00b1 0.0048",
+          "0.9841 \u00b1 0.0013"
+        ]
+      ]
+    },
+    "table9_ablation": {
+      "header": [
+        "Variant",
+        "Accuracy",
+        "Macro F1",
+        "AUC",
+        "\u0394 Accuracy vs full",
+        "Uplink/round (MB)"
+      ],
+      "rows": [
+        [
+          "full",
+          "0.9088 \u00b1 0.0029",
+          "0.8908 \u00b1 0.0039",
+          "0.9909 \u00b1 0.0003",
+          "\u2014",
+          "1.145 \u00b1 0.024"
+        ],
+        [
+          "no_dqn",
+          "0.9090 \u00b1 0.0017",
+          "0.8909 \u00b1 0.0008",
+          "0.9909 \u00b1 0.0002",
+          "+0.0002",
+          "1.847 \u00b1 0.000"
+        ],
+        [
+          "no_fedprox",
+          "0.8965 \u00b1 0.0082",
+          "0.8781 \u00b1 0.0097",
+          "0.9876 \u00b1 0.0005",
+          "-0.0123",
+          "1.099 \u00b1 0.056"
+        ],
+        [
+          "no_compression",
+          "0.9133 \u00b1 0.0031",
+          "0.8980 \u00b1 0.0036",
+          "0.9917 \u00b1 0.0003",
+          "+0.0045",
+          "10.354 \u00b1 0.212"
+        ],
+        [
+          "no_adv_training",
+          "0.9307 \u00b1 0.0000",
+          "0.9222 \u00b1 0.0009",
+          "0.9949 \u00b1 0.0003",
+          "+0.0219",
+          "1.154 \u00b1 0.076"
+        ],
+        [
+          "no_anomaly_filter",
+          "0.9088 \u00b1 0.0029",
+          "0.8908 \u00b1 0.0039",
+          "0.9909 \u00b1 0.0003",
+          "+0.0000",
+          "1.145 \u00b1 0.024"
+        ],
+        [
+          "plus_dp",
+          "0.6187 \u00b1 0.0098",
+          "0.4681 \u00b1 0.0113",
+          "0.8972 \u00b1 0.0308",
+          "-0.2901",
+          "1.176 \u00b1 0.093"
+        ]
+      ]
+    },
+    "table10_poisoning": {
+      "header": [
+        "Setting",
+        "Accuracy",
+        "Macro F1",
+        "AUC",
+        "Updates rejected",
+        "True positives",
+        "False positives"
+      ],
+      "rows": [
+        [
+          "clean",
+          "0.9110 \u00b1 0.0042",
+          "0.8949 \u00b1 0.0043",
+          "0.9910 \u00b1 0.0004",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0"
+        ],
+        [
+          "labelflip3_defended",
+          "0.8825 \u00b1 0.0167",
+          "0.8611 \u00b1 0.0209",
+          "0.9872 \u00b1 0.0020",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0"
+        ],
+        [
+          "labelflip3_undefended",
+          "0.8825 \u00b1 0.0167",
+          "0.8611 \u00b1 0.0209",
+          "0.9872 \u00b1 0.0020",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0"
+        ],
+        [
+          "no_adv_training",
+          "0.9316 \u00b1 0.0006",
+          "0.9237 \u00b1 0.0013",
+          "0.9950 \u00b1 0.0001",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0"
+        ],
+        [
+          "poison2_defended",
+          "0.7911 \u00b1 0.1389",
+          "0.7259 \u00b1 0.2018",
+          "0.9621 \u00b1 0.0368",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0"
+        ],
+        [
+          "poison2_undefended",
+          "0.2966 \u00b1 0.0871",
+          "0.1380 \u00b1 0.1001",
+          "0.6649 \u00b1 0.1517",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0"
+        ],
+        [
+          "poison3_defended",
+          "0.5322 \u00b1 0.1400",
+          "0.4193 \u00b1 0.1385",
+          "0.9349 \u00b1 0.0282",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0",
+          "0.0 \u00b1 0.0"
+        ]
+      ]
+    },
+    "table11b_evasion_by_setting": {
+      "header": [
+        "Model",
+        "Clean",
+        "FGSM \u03b5=0.01",
+        "FGSM \u03b5=0.03",
+        "FGSM \u03b5=0.05",
+        "FGSM \u03b5=0.1",
+        "PGD \u03b5=0.03",
+        "PGD \u03b5=0.05"
+      ],
+      "rows": [
+        [
+          "clean",
+          "0.9110 \u00b1 0.0042",
+          "0.8600 \u00b1 0.0036",
+          "0.7354 \u00b1 0.0039",
+          "0.6209 \u00b1 0.0119",
+          "0.3883 \u00b1 0.0131",
+          "0.7002 \u00b1 0.0061",
+          "0.5385 \u00b1 0.0150"
+        ],
+        [
+          "labelflip3_defended",
+          "0.8825 \u00b1 0.0167",
+          "0.8279 \u00b1 0.0065",
+          "0.7077 \u00b1 0.0079",
+          "0.5974 \u00b1 0.0154",
+          "0.3904 \u00b1 0.0156",
+          "0.6726 \u00b1 0.0134",
+          "0.5243 \u00b1 0.0287"
+        ],
+        [
+          "labelflip3_undefended",
+          "0.8825 \u00b1 0.0167",
+          "0.8279 \u00b1 0.0065",
+          "0.7077 \u00b1 0.0079",
+          "0.5974 \u00b1 0.0154",
+          "0.3904 \u00b1 0.0156",
+          "0.6726 \u00b1 0.0134",
+          "0.5243 \u00b1 0.0287"
+        ],
+        [
+          "no_adv_training",
+          "0.9316 \u00b1 0.0006",
+          "0.6563 \u00b1 0.0155",
+          "0.3679 \u00b1 0.0180",
+          "0.2375 \u00b1 0.0243",
+          "0.0732 \u00b1 0.0244",
+          "0.2401 \u00b1 0.0244",
+          "0.0604 \u00b1 0.0257"
+        ],
+        [
+          "poison2_defended",
+          "0.7911 \u00b1 0.1389",
+          "0.7383 \u00b1 0.1342",
+          "0.6251 \u00b1 0.1190",
+          "0.5169 \u00b1 0.1069",
+          "0.3239 \u00b1 0.0533",
+          "0.5922 \u00b1 0.1151",
+          "0.4497 \u00b1 0.1028"
+        ],
+        [
+          "poison2_undefended",
+          "0.2966 \u00b1 0.0871",
+          "0.2711 \u00b1 0.0677",
+          "0.2148 \u00b1 0.0367",
+          "0.1664 \u00b1 0.0221",
+          "0.0824 \u00b1 0.0143",
+          "0.2003 \u00b1 0.0333",
+          "0.1069 \u00b1 0.0475"
+        ],
+        [
+          "poison3_defended",
+          "0.5322 \u00b1 0.1400",
+          "0.5088 \u00b1 0.1342",
+          "0.4620 \u00b1 0.1191",
+          "0.4107 \u00b1 0.0950",
+          "0.2940 \u00b1 0.0575",
+          "0.4522 \u00b1 0.1157",
+          "0.3836 \u00b1 0.0865"
+        ]
+      ]
+    },
+    "table12_partition": {
+      "header": [
+        "Partition",
+        "Clients missing a class",
+        "Min / max samples",
+        "Accuracy",
+        "Macro F1",
+        "AUC"
+      ],
+      "rows": [
+        [
+          "dirichlet_0.1",
+          "9.3 \u00b1 0.6",
+          "438 / 2155",
+          "0.8689 \u00b1 0.0123",
+          "0.8449 \u00b1 0.0178",
+          "0.9854 \u00b1 0.0024"
+        ],
+        [
+          "dirichlet_0.5",
+          "3.3 \u00b1 0.6",
+          "485 / 2578",
+          "0.9110 \u00b1 0.0042",
+          "0.8949 \u00b1 0.0043",
+          "0.9910 \u00b1 0.0004"
+        ],
+        [
+          "dirichlet_1.0",
+          "0.3 \u00b1 0.6",
+          "645 / 1935",
+          "0.9181 \u00b1 0.0036",
+          "0.9039 \u00b1 0.0051",
+          "0.9916 \u00b1 0.0005"
+        ],
+        [
+          "iid",
+          "0.0 \u00b1 0.0",
+          "1195 / 1196",
+          "0.9213 \u00b1 0.0047",
+          "0.9065 \u00b1 0.0053",
+          "0.9924 \u00b1 0.0004"
+        ]
+      ]
+    },
+    "table13_cohort_budget": {
+      "header": [
+        "Federation size",
+        "Images per hospital",
+        "Accounted eps (worst)",
+        "Accounted eps (median)"
+      ],
+      "rows": [
+        [
+          "0.4x (approx. 4.8k images)",
+          "44-1,263",
+          "57.6",
+          "16.0"
+        ],
+        [
+          "1x (BloodMNIST, 12.0k images)",
+          "112-3,158",
+          "28.0",
+          "8.9"
+        ],
+        [
+          "3x (approx. 35.9k images)",
+          "336-9,474",
+          "13.5",
+          "4.6"
+        ],
+        [
+          "7.5x (approx. 89.7k images)",
+          "840-23,685",
+          "7.7",
+          "2.7"
+        ]
+      ]
+    }
+  },
+  "narrative": {
+    "ablation_narrative": "Removing plus_dp produces the largest single degradation in accuracy (-0.2901 relative to the complete framework, which reaches 0.9088). Ranked by the size of the effect, the changes in accuracy on removing each component are: plus_dp (-0.2901), the FedProx proximal term (-0.0123), the anomaly filter (+0.0000), the reinforcement-learning controller (+0.0002), gradient compression (+0.0045), adversarial training (+0.0219). Components whose removal improves raw accuracy are retained because they purchase a property that accuracy does not measure: differential privacy provides the formal guarantee of Table 6, and gradient compression reduces uplink volume by 89.1%.",
+    "mechanism_note": "The ablation attributes the advantage over static aggregation principally to plus_dp, rather than to the combination as a whole.",
+    "attack_narrative": "Under evasion attack the adversarially trained model retains 0.735 accuracy against FGSM and 0.700 against 10-step PGD at a perturbation budget of 0.03, against 0.911 on clean data. whereas the same model trained without adversarial examples falls to 0.368 under the identical FGSM attack. With two sign-flipping hospitals, the proposed defences hold accuracy at 0.791 against 0.297 when norm clipping, trimmed-mean aggregation and the anomaly filter are disabled. With three label-flipping hospitals, the proposed defences hold accuracy at 0.882 against 0.882 when norm clipping, trimmed-mean aggregation and the anomaly filter are disabled.",
+    "smallcohort_narrative": "The determining factor is the number of images each institution holds, because it sets the subsampling rate and therefore how cheaply the budget composes over local steps. Holding the noise multiplier at 1.5 and the schedule fixed, and varying only the per-hospital sample count, the accounted worst-case budget moves from 57.6 at roughly a fifth of our cohort size to 7.7 at seven times it. A federation of ten institutions the size of ours therefore cannot reach a single-digit budget at useful accuracy however the mechanism is tuned, whereas the same mechanism on a cohort several times larger can. We state this because it bounds what any differentially private cross-silo framework of this scale can claim, independently of the particular architecture used."
+  }
+}
